@@ -9,6 +9,9 @@ export const typeDefs = gql`
 
     authors: [Author]
     author(id: ID): Author
+    books(sortField: String): [Book]
+    bookById(id: ID): Book
+    bookByISBN(isbn: String): Book
   }
 
   type Author {
@@ -16,5 +19,13 @@ export const typeDefs = gql`
     firstName: String
     lastName: String
     age: Int
+  }
+
+  type Book {
+    id: ID
+    title: String
+    isbn: String
+    copyrightYear: Int
+    price: Float
   }
 `;

@@ -4,8 +4,10 @@ import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 
 import { Author } from './services/author';
+import { Book } from './services/book';
 
 const author = new Author();
+const book = new Book();
 
 const apolloServerConfig = {
   typeDefs,
@@ -17,6 +19,7 @@ const apolloServerConfig = {
       restUrl: process.env.REST_URL,
       data: {
         author,
+        book,
       },
     };
   },

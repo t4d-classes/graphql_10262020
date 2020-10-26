@@ -23,5 +23,14 @@ export const resolvers = {
     author(_, args, context) {
       return context.data.author.oneById(Number(args.id));
     },
+    books(_1, args, context) {
+      return context.data.book.all({ sortField: args.sortField });
+    },
+    bookById(_, args, context) {
+      return context.data.book.oneById(Number(args.id));
+    },
+    bookByISBN(_, args, context) {
+      return context.data.book.oneByISBN(args.isbn);
+    },
   },
 };
