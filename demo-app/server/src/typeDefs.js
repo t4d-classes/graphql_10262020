@@ -8,9 +8,11 @@ export const typeDefs = gql`
     isCustomer: Boolean
 
     authors: [Author]
+    author(id: ID): Author
   }
 
   type Author {
+    id: ID
     firstName: String
     lastName: String
     age: Int

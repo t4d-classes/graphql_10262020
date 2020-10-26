@@ -17,12 +17,11 @@ export const resolvers = {
     isCustomer() {
       return true;
     },
-    authors() {
-      return [
-        { firstName: 'Grace', lastName: 'Greene', age: 20 },
-        { firstName: 'Bob', lastName: 'Smith', age: 32 },
-        { firstName: 'Sally', lastName: 'Thompkins', age: 45 },
-      ];
+    authors(_1, _2, context) {
+      return context.data.author.all();
+    },
+    author(_, args, context) {
+      return context.data.author.oneById(Number(args.id));
     },
   },
 };
