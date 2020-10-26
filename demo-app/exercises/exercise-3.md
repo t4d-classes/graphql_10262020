@@ -1,6 +1,6 @@
 # Exercise 3
 
-1. Using the data model of the services we have already created, upgrade all of the book fields to return full author info and update all of the author fields to return a list of books.
+1. Using the data model of the services we have already created, upgrade all of the book query fields to return the author type and update all of the author fields to return a list of books.
 
 2. Using an alias, make a query which returns the books in price order.
 

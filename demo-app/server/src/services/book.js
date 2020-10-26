@@ -33,7 +33,7 @@ export class Book {
 
     const books = [...this._books];
 
-    if (options.sortField) {
+    if (options?.sortField) {
       books.sort((a, b) => {
         if (a[options.sortField] < b[options.sortField]) {
           return -1;
