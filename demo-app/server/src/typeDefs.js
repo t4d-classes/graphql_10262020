@@ -19,6 +19,7 @@ export const typeDefs = gql`
     firstName: String
     lastName: String
     age: Int
+    books: [Book]
   }
 
   type Book {
@@ -27,5 +28,7 @@ export const typeDefs = gql`
     isbn: String
     copyrightYear: Int
     price: Float
+    authorId: ID
+    author: Author
   }
 `;

@@ -24,7 +24,14 @@ export const resolvers = {
       return context.data.author.oneById(Number(args.id));
     },
     books(_1, args, context) {
-      return context.data.book.all({ sortField: args.sortField });
+      return context.data.book
+        .all({ sortField: args.sortField })
+        .map((book) => {
+          return {
+            ...book, // make a copy of the book object into a new object
+            author: context.data.author.oneById(book.authorId),
+          };
+        });
     },
     bookById(_, args, context) {
       return context.data.book.oneById(Number(args.id));

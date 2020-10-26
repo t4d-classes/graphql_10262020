@@ -7,6 +7,7 @@ export class Book {
         isbn: 'AAA111AAA111',
         copyrightYear: 2020,
         price: 25.44,
+        authorId: 1,
       },
       {
         id: 2,
@@ -14,6 +15,7 @@ export class Book {
         isbn: 'BBB222BBB222',
         copyrightYear: 2019,
         price: 15.84,
+        authorId: 1,
       },
       {
         id: 3,
@@ -21,6 +23,7 @@ export class Book {
         isbn: 'CCC333CCC333',
         copyrightYear: 2018,
         price: 65.94,
+        authorId: 3,
       },
     ];
   }
