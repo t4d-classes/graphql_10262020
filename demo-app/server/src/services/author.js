@@ -24,7 +24,7 @@ export class Author {
       id: Math.max(...this._authors.map((a) => a.id), 0) + 1,
     };
 
-    this._authors = this._authors = [...this._authors, newAuthor];
+    this._authors = [...this._authors, newAuthor];
 
     return newAuthor;
   }
