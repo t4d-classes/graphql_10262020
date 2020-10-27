@@ -59,4 +59,33 @@ export class Book {
     // return the first book object with the matching id
     return this._books.find((b) => b.isbn === bookISBN);
   }
+
+  append(book) {
+    const newBook = {
+      ...book,
+      // find the max book id in the array, then add 1 to it
+      id: Math.max(...this._books.map((a) => a.id), 0) + 1,
+    };
+
+    this._books = [...this._books, newBook];
+
+    return newBook;
+  }
+
+  attachAuthor(bookId, authorId) {
+    const bookIndex = this._books.findIndex((b) => b.id === bookId);
+
+    const updatedBook = {
+      ...this._books[bookIndex],
+      authorId,
+    };
+
+    const newBooks = [...this._books];
+
+    newBooks[bookIndex] = updatedBook;
+
+    this._books = newBooks;
+
+    return updatedBook;
+  }
 }

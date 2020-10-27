@@ -51,10 +51,33 @@ export const resolvers = {
     bookByISBN(_, args, context) {
       return context.data.book.oneByISBN(args.isbn);
     },
+    employees(_1, _2, context) {
+      return context.data.employee.all();
+    },
+    employee(_, args, context) {
+      return context.data.employee.oneBySSN(args.ssn);
+    },
   },
   Mutation: {
     appendAuthor(_, args, context) {
-      return context.data.author.appendAuthor(args.author);
+      return context.data.author.append(args.author);
+    },
+    appendBook(_, args, context) {
+      return context.data.book.append(args.book);
+    },
+    appendEmployee(_, args, context) {
+      return context.data.employee.append(args.employee);
+    },
+    removeEmployee(_, args, context) {
+      console.log(args.employeeId);
+
+      return context.data.employee.remove(Number(args.employeeId));
+    },
+    attachAuthorToBook(_, args, context) {
+      return context.data.book.attachAuthor(
+        Number(args.bookId),
+        Number(args.authorId),
+      );
     },
   },
 };

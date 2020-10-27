@@ -17,7 +17,7 @@ export class Author {
     return this._authors.find((a) => a.id === authorId);
   }
 
-  appendAuthor(author) {
+  append(author) {
     const newAuthor = {
       ...author,
       // find the max author id in the array, then add 1 to it
