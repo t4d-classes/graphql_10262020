@@ -54,7 +54,7 @@ export const resolvers = {
   },
   Mutation: {
     appendAuthor(_, args, context) {
-      return context.data.author.appendAuthor(args.authors);
+      return context.data.author.appendAuthor(args.author);
     },
   },
 };
