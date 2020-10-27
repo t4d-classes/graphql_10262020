@@ -28,4 +28,16 @@ export class Author {
 
     return newAuthor;
   }
+
+  remove(authorId) {
+
+    // find the author
+    const author = this._authors.find((e) => e.id === authorId);
+
+    // filter the author from the new array, performing a delete
+    this._authors = this._authors.filter((e) => e.id !== authorId);
+
+    // return the deleted author
+    return author;
+  }
 }
