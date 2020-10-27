@@ -16,4 +16,16 @@ export class Author {
     // return the first author object with the matching id
     return this._authors.find((a) => a.id === authorId);
   }
+
+  appendAuthor(author) {
+    const newAuthor = {
+      ...author,
+      // find the max author id in the array, then add 1 to it
+      id: Math.max(...this._authors.map((a) => a.id), 0) + 1,
+    };
+
+    this._authors = this._authors = [...this._authors, newAuthor];
+
+    return newAuthor;
+  }
 }

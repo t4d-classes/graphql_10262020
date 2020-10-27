@@ -5,6 +5,13 @@
 
 export const resolvers = {
   Author: {
+    // default implementation if the field is not defined on the resolver
+    firstName(author) {
+      return author.firstName;
+    },
+    fullName(author) {
+      return author.firstName + ' ' + author.lastName;
+    },
     books(author, _, context) {
       return context.data.book
         .all()
@@ -43,6 +50,11 @@ export const resolvers = {
     },
     bookByISBN(_, args, context) {
       return context.data.book.oneByISBN(args.isbn);
+    },
+  },
+  Mutation: {
+    appendAuthor(_, args, context) {
+      return context.data.author.appendAuthor(args.authors);
     },
   },
 };
